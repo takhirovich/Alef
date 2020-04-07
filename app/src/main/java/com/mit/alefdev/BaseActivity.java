@@ -1,7 +1,6 @@
 package com.mit.alefdev;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,16 +21,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class BaseActivity extends AppCompatActivity {
 
     private ProgressDialog mProgressDialog;
-    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    @SuppressLint("HardwareIds")
-    public String getDeviceId() {
-        return Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
     public void showProgress(String msg) {
@@ -49,9 +41,6 @@ public class BaseActivity extends AppCompatActivity {
             mProgressDialog = null;
         }
     }
-
-
-
     public void fullImageDialog(String image) {
         View view = this.getLayoutInflater().inflate(R.layout.dialog_image, null);
         ImageButton closeBtn = view.findViewById(R.id.close);

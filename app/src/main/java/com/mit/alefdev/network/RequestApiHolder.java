@@ -1,10 +1,7 @@
 package com.mit.alefdev.network;
 
 
-import com.mit.alefdev.beans.RequestResult;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
